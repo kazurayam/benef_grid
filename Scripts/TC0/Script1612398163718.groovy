@@ -1,11 +1,19 @@
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.nio.file.Path
+import java.nio.file.Paths
+
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+Path projectDir = Paths.get(RunConfiguration.getProjectDir())
+Path mhtml = projectDir.resolve('benef_grid.mhtml')
+String url = mhtml.toFile().toURI().toURL().toExternalForm()
 
 WebUI.openBrowser('')
 WebUI.navigateToUrl('file:///Users/kazuakiurayama/Downloads/benef_grid.mhtml')

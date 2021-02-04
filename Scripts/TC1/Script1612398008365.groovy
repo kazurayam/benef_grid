@@ -1,15 +1,13 @@
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import java.nio.file.Path
+import java.nio.file.Paths
 
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import java.nio.file.Path
-import java.nio.file.Paths
-import java.nio.file.Files
-import com.kms.katalon.core.configuration.RunConfiguration
 
 int loopCount = 0
 int MAX_REPEAT = 3    // exit infinite loop if the loopCount execeded the max
