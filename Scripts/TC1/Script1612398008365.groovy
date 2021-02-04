@@ -6,12 +6,20 @@ import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import java.nio.file.Path
+import java.nio.file.Paths
+import java.nio.file.Files
+import com.kms.katalon.core.configuration.RunConfiguration
 
 int loopCount = 0
 int MAX_REPEAT = 3    // exit infinite loop if the loopCount execeded the max
 
+Path projectDir = Paths.get(RunConfiguration.getProjectDir())
+Path mhtml = projectDir.resolve('benef_grid.mhtml')
+String url = mhtml.toFile().toURI().toURL().toExternalForm()
+
 WebUI.openBrowser('')
-WebUI.navigateToUrl('file:///Users/kazuakiurayama/Downloads/benef_grid.mhtml')
+WebUI.navigateToUrl(url)
 WebUI.delay(1)
 
 WebDriver driver = DriverFactory.getWebDriver()
